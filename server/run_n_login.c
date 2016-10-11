@@ -1,3 +1,11 @@
+//
+//  main.c
+//  communucation
+//
+//  Created by Minsu Lee on 2016. 5. 24..
+//  Copyright © 2016년 mins. All rights reserved.
+//
+
 #include "run_n_login.h"
 
 #define PORT 9001
