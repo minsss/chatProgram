@@ -2,7 +2,7 @@
 //  run_n_client.h
 //  communication
 //
-//  Created by csrc on 2016. 5. 24..
+//  Created by Minsu Lee on 2016. 5. 24..
 //  Copyright © 2016년 mins. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <time.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>

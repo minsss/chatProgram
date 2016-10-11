@@ -9,10 +9,14 @@
 #ifndef run_n_login_h
 #define run_n_login_h
 
+#define MAX_ID 20
+#define MAX_PSWD 20
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 
-int do_compare(char *id, char *pswd);
+void * do_login(void *arg);
 
 #endif /* run_n_login_h */

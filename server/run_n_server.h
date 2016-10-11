@@ -24,8 +24,6 @@
 
 #include <pthread.h>
 
-#include "run_n_login.h"
-
 int run_n_server();
 
 #endif /* run_n_server_h */

@@ -8,6 +8,7 @@
 
 
 #include "run_n_server.h"
+#include "run_n_login.h"
 
 #define PORT 9001
 #define MAX_CLIENT 10
@@ -18,9 +19,6 @@ char greet0[] = "---------------------------------------------------------------
 char greet1[] = "------------------- Welcome to CSRC chat server ------------------\n";
 char greet2[] = "------------------------------------------------------------------\n";
 
-char ID[] = "ID : ";
-char pswd[] = "password : ";
-
 int list_c[MAX_CLIENT];
 
 pthread_t thread;
@@ -28,7 +26,6 @@ pthread_t login_thread;
 pthread_mutex_t mutex;
 
 //main functions
-void *do_login(void *);
 void *do_chat(void *);
 int pushClient(int);
 int popClient(int);
@@ -95,12 +92,6 @@ int run_n_server()
 	write(c_socket, greet0, strlen(greet0));
 	write(c_socket, greet1, strlen(greet1));
 	write(c_socket, greet2, strlen(greet2));
-    	
-	if(pthread_create(&login_thread, NULL, do_login, (void *) c_socket) < 0) {
-	    perror("login_pthread create error!!\n");
-	    exit(1);
-	}
-	pthread_join(login_thread, NULL);
 
 	res = pushClient(c_socket);
 
@@ -118,33 +109,6 @@ int run_n_server()
 	    }
 	}
     }
-}
-
-void * do_login(void *arg)
-{
-    int c_socket = (int) arg;
-    char login_id[20];
-    char login_pswd[20];
-
-    int n, m;   // n for id, m for pswd
-
-    memset(login_id, 0, sizeof(login_id));
-    memset(login_pswd, 0, sizeof(login_pswd));
-
-    write(c_socket, ID, strlen(ID));
-    if((n = read(c_socket, login_id, sizeof(login_id))) > 0) {
-	login_id[sizeof(login_id) - 1] = '\0';
-	printf("got ID from client %d, %s\n", c_socket, login_id);
-    }
-
-    write(c_socket, pswd, strlen(pswd));
-    if((n = read(c_socket, login_pswd, sizeof(login_id))) > 0) {
-	login_pswd[sizeof(login_pswd) - 1] = '\0';
-	printf("got ID from client %d, %s\n", c_socket, login_pswd);
-    }
-
-    //do_compare(login_id, login_pswd);
-    printf("%d\n", do_compare(login_id, login_pswd));
 }
 
 void * do_chat(void *arg)

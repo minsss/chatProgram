@@ -2,7 +2,7 @@
 //  main.c
 //  communication
 //
-//  Created by csrc on 2016. 5. 24..
+//  Created by Minsu Lee on 2016. 5. 24..
 //  Copyright © 2016년 mins. All rights reserved.
 //
 
