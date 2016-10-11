@@ -22,9 +22,11 @@
 
 #include <signal.h>
 
-
-
+#define PORT 9001
+#define IPADDR "127.0.0.1"
+#define MAX_INPUT_SIZE 20
 
 int run_n_client();
+void sig_handler(int sig);
 
 #endif /* run_n_client_h */

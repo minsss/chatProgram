@@ -10,6 +10,7 @@
 #include <unistd.h>
 
 #include "run_n_client.h"
+#include "run_c_client.h"
 
 
 
@@ -29,7 +30,9 @@ int main(int argc, char * const * argv) {
     while ((n = getopt(argc, argv, "cnh")) != -1){
         switch (n)
         {
-            case 'c' : puts("-c option selected\n");
+            case 'c' : //puts("-c option selected\n");
+
+		run_c_client();
                 
                 break;
                 
@@ -54,7 +57,6 @@ int main(int argc, char * const * argv) {
 		puts("many thanks :)\n");
         }
         
-        //puts("%s\n", argv[2]);
     }
     
     return 0;

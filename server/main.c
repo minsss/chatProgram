@@ -25,7 +25,7 @@ int main(int argc, char * const * argv) {
     while ((n = getopt(argc, argv, "cnh")) != -1){
         switch (n)
         {
-            case 'c' : puts("-c option selected\n");
+            case 'c' : //puts("-c option selected");
                 break;
                 
             case 'n' : //printf("-n option selected\n");

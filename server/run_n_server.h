@@ -24,6 +24,11 @@
 
 #include <pthread.h>
 
+#define PORT 9001
+#define MAX_CLIENT 10
+
 int run_n_server();
+int pushClient(int);
+int popClient(int);
 
 #endif /* run_n_server_h */

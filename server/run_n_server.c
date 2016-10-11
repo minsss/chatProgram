@@ -8,10 +8,7 @@
 
 
 #include "run_n_server.h"
-#include "run_n_login.h"
 
-#define PORT 9001
-#define MAX_CLIENT 10
 
 char quit[] = ":quit";
 char nomore[] = "No more connection // MAX 10\n";
@@ -25,13 +22,7 @@ pthread_t thread;
 pthread_t login_thread;
 pthread_mutex_t mutex;
 
-//main functions
 void *do_chat(void *);
-int pushClient(int);
-int popClient(int);
-
-//more functions
-
 
 int run_n_server()
 {

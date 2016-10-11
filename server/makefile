@@ -1,4 +1,4 @@
-OBJECTS = main.o run_n_server.o run_n_login.o
+OBJECTS = main.o run_n_server.o run_c_server.o
 
 CC = gcc
 CFLAGS = -c
@@ -14,8 +14,8 @@ main.o : main.c
 run_n_server.o : run_n_server.c
 	gcc -c run_n_server.c
 
-run_n_login.o : run_n_login.c
-	gcc -c run_n_login.c
+run_c_server.o : run_c_server.c
+	gcc -c run_c_server.c
 
 clean :
 	rm $(OBJECTS) $(TARGET)

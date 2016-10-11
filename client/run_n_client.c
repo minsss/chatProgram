@@ -8,9 +8,7 @@
 
 #include "run_n_client.h"
 
-#define PORT 9001
-#define IPADDR "127.0.0.1"
-#define MAX_INPUT_SIZE 20
+
 
 char quit[] = ":quit";
 char *g_name;
